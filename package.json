@@ -25,23 +25,6 @@
   "scripts": {
     "lint-staged": "$(yarn bin)/lint-staged"
   },
-  "lint-staged": {
-    "config/webpack/**/*.js": [
-      "prettier --write",
-      "eslint",
-      "git add"
-    ],
-    "frontend/**/*.js": [
-      "prettier --write",
-      "eslint",
-      "git add"
-    ],
-    "frontend/**/*.css": [
-      "prettier --write",
-      "stylelint --fix",
-      "git add"
-    ]
-  },
   "pre-commit": [
     "lint-staged"
   ]
