@@ -1,10 +1,17 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :current_user
+    identified_by :loco_permissions
 
     def connect
-      self.current_user = request.session.fetch("username", nil)
-      reject_unauthorized_connection unless current_user
+      # loco_permissions should be the same as in application_controller.rb
+      # + SecureRandom.uuid is mandatory at 1st position
+      self.loco_permissions = [SecureRandom.uuid, current_user]
     end
+
+    protected
+
+      def current_user
+        @current_user ||= User.find_by id: request.session.fetch("user_id", nil)
+      end
   end
 end

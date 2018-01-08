@@ -1,4 +1,3 @@
-import { setCallback } from "client/chat";
 import "components/message/message"; // message is nested, so we import it here
 import "./messages.css";
 
@@ -12,9 +11,10 @@ function scrollToBottom() {
 
 scrollToBottom();
 
-// Telling `chat.js` to call this piece of code whenever a new message is received
-// over Action Cable
-setCallback(message => {
-  content.insertAdjacentHTML("beforeend", message);
+const displayNewMessage = msg => {
+  if (!content) return;
+  content.insertAdjacentHTML("beforeend", msg);
   scrollToBottom();
-});
+};
+
+export default displayNewMessage;

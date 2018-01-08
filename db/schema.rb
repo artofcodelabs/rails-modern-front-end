@@ -10,11 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107140755) do
+ActiveRecord::Schema.define(version: 20180107230911) do
+
+  create_table "loco_notifications", force: :cascade do |t|
+    t.string "obj_class"
+    t.integer "obj_id"
+    t.string "event"
+    t.string "data"
+    t.string "recipient_class"
+    t.integer "recipient_id"
+    t.string "recipient_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "author"
     t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

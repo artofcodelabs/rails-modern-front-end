@@ -1,5 +1,4 @@
-// we need to import sendMessage from our client/chat.js
-import { sendMessage } from "client/chat";
+import { Env } from "loco-js";
 import "./message-form.css";
 
 const form = document.querySelector(".js-message-form");
@@ -7,9 +6,8 @@ const input = form && form.querySelector(".js-message-form--input");
 const submit = form && form.querySelector(".js-message-form--submit");
 
 function submitForm() {
-  // Invokes sendMessage, that, in turn, invokes Ruby send_message method
-  // that will create a Message instance with ActiveRecord
-  sendMessage(input.value);
+  // This will invoke received_signal method inside app/services/notification_center.rb
+  Env.loco.emit({ message: input.value });
   input.value = "";
   input.focus();
 }

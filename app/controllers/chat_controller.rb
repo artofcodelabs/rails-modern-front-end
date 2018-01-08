@@ -10,6 +10,6 @@ class ChatController < ApplicationController
 
   # redirect user to /login if he hadn't picked a username yet
   def authenticate!
-    redirect_to login_path unless session[:username]
+    redirect_to login_path unless current_user
   end
 end

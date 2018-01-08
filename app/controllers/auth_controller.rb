@@ -5,7 +5,7 @@ class AuthController < ApplicationController
 
   # Get username from params, save to session and redirect to chat window
   def create
-    session[:username] = params[:username]
+    session[:user_id] = User.find_or_create_by(username: params[:username]).id
     redirect_to root_path
   end
 
@@ -13,6 +13,6 @@ class AuthController < ApplicationController
 
   # If a user had been to our chat before — send them straight to chat window
   def only_for_anonymous
-    redirect_to root_path if session[:username]
+    redirect_to root_path if current_user
   end
 end

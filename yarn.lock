@@ -3720,6 +3720,16 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+loco-js-model@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/loco-js-model/-/loco-js-model-0.2.0.tgz#ede1d3bd12c2217c08fc4f0f10e8e408d7c79810"
+
+loco-js@~3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/loco-js/-/loco-js-3.0.0.tgz#84d5b1a3d7263c18bf2d13cf29c0e231ac34a5f4"
+  dependencies:
+    loco-js-model "~0.2.0"
+
 lodash._baseget@^3.0.0:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/lodash._baseget/-/lodash._baseget-3.7.2.tgz#1b6ae1d5facf3c25532350a13c1197cb8bb674f4"
