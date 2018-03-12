@@ -2,9 +2,9 @@
   "name": "evil_chat_codealong",
   "private": true,
   "dependencies": {
-    "actioncable": "^5.1.4",
+    "actioncable": "^5.1.5",
     "loco-js": "~3.2.2",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^8.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
