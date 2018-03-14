@@ -1,5 +1,5 @@
 {
-  "config/webpack/**/*.js": [
+  "./*.js": [
     "prettier --write",
     "eslint",
     "git add"

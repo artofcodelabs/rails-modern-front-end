@@ -4,11 +4,11 @@
     <title>EvilChat</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
   </head>
 
   <%= content_tag :body, loco_body_data do %>
     <%= yield %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'manifest', 'vendor', 'application' %>
   <% end %>
 </html>
