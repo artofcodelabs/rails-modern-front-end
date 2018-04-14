@@ -17,5 +17,13 @@
 !/log/.keep
 !/tmp/.keep
 
-.byebug_history
+# Ignore uploaded files in development
+/storage/*
+
 /node_modules
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
